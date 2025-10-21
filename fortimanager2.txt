@@ -1,0 +1,15 @@
+config system ha
+    set failover-mode vrrp
+    set mode secondary
+        config peer
+            edit 1
+                set ip 10.1.1.10
+                set serial-number "FMG-VMTM25014032"
+            next
+        end
+    set password ClusterPassword
+    set priority 100
+    set unicast enable
+    set vip "192.0.2.1"
+    set vrrp-interface "port1"
+end
